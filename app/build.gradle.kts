@@ -3,11 +3,12 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.org.jetbrains.kotlin.kapt)
     alias(libs.plugins.androidx.navigation.safe.args)
+    alias(libs.plugins.hiltPlugin)
 }
 
 android {
     namespace = "com.first.foodapp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.first.foodapp"
@@ -78,4 +79,8 @@ dependencies {
     implementation(libs.lifecycle.viewmodel.ktx)
 
 
+    //Hilt
+    implementation (libs.hilt.android)
+    kapt(libs.dagger.compiler)
+    kapt(libs.hilt.compiler)
 }

@@ -4,4 +4,5 @@ plugins {
     alias(libs.plugins.kotlin.android) apply false
     alias(libs.plugins.org.jetbrains.kotlin.kapt) apply false
     alias(libs.plugins.androidx.navigation.safe.args) apply false
+    alias(libs.plugins.hiltPlugin) apply false
 }
