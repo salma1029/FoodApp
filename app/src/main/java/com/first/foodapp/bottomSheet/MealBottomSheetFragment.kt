@@ -25,6 +25,7 @@ class MealBottomSheetFragment : BottomSheetDialogFragment() {
 
     private lateinit var binding : FragmentMealBottomSheettBinding
     private lateinit var viewModel : HomeViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {

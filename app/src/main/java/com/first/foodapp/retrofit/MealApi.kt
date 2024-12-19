@@ -13,13 +13,13 @@ interface MealApi {
     @GET("random.php")
     fun getRandomMeals() : Call<MealList>
 
-    @GET("lookup.php?")
+    @GET("lookup.php")
     fun getMealDetails(
         @Query("i")
         id : String
     ): Call<MealList>
 
-    @GET("filter.php?")
+    @GET("filter.php")
     fun getPopularItems(
         @Query("c")
         categoryName : String
