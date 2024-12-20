@@ -5,6 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.first.foodapp.pojo.Category
+import com.first.foodapp.pojo.Meal
+import com.first.foodapp.pojo.MealList
 import com.first.foodapp.pojo.MealsByCategory
 import com.first.foodapp.pojo.MealsByCategoryList
 import com.first.foodapp.retrofit.RetrofitInstance
@@ -14,6 +16,8 @@ import retrofit2.Response
 
 class CategoryMealsViewModel : ViewModel() {
     private val mealsLiveData = MutableLiveData<List<MealsByCategory>>()
+    private var mealLiveData  =MutableLiveData<Meal>()
+
     fun getMealsByCategory(category : String){
         RetrofitInstance.api.getMealsByCategory(category).enqueue(object : Callback<MealsByCategoryList>{
             override fun onResponse(
@@ -35,4 +39,7 @@ class CategoryMealsViewModel : ViewModel() {
     fun observeMealsLiveData() : LiveData<List<MealsByCategory>>{
         return mealsLiveData
     }
+
+
+
 }
